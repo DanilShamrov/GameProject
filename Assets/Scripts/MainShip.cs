@@ -63,13 +63,19 @@ public class MainShip : MonoBehaviour
         {
             transform.Rotate(new Vector3(0, rotationSpeed, 0));
         }
-        if (transform.position.y < 0)
+        if (transform.position.y < -75)
         {
             transform.Rotate(new Vector3(-rotationSpeed, 0, 0));
         }
-        if (transform.position.y > 100)
+        if (transform.position.y > 75)
         {
             transform.Rotate(new Vector3(rotationSpeed, 0, 0));
         }
+    }
+    private void OnDestroy()
+    {
+        
+        transform.DetachChildren();
+
     }
 }

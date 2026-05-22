@@ -21,6 +21,7 @@ public class DestructibleObject : MonoBehaviour, IDamageable
     {
         if (currentHealth <= 0)
         {
+            
             Destroy(gameObject);
         }
     }

@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b1e6de8bc413d4eb069ad7a69e28e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
-  damageDealt: 200
+  damageDealt: 10
 --- !u!1 &7191321168718882862
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4485c633d32d0a4392010430a130afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterSeconds
-  sec: 3
+  sec: 10
 --- !u!114 &5422426574549147876
 MonoBehaviour:
   m_ObjectHideFlags: 0

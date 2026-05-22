@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CanDamageOnCollision : MonoBehaviour
 {
+    //public BulletData damage;
     [SerializeField] private int damageDealt = 20;
     private void OnTriggerEnter(Collider other)
     {

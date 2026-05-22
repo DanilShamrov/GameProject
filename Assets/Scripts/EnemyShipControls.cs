@@ -3,8 +3,8 @@ using UnityEngine;
 public class EnemyShipControls : MonoBehaviour
 {
 
-    [SerializeField] public GameObject Ship;
-    [SerializeField] public GameObject Target;
+    public GameObject Ship;
+    public GameObject Target;
     IWeapon[] weapon;
 
     public float rotationSpeed;
@@ -43,5 +43,9 @@ public class EnemyShipControls : MonoBehaviour
     {
         Ship.transform.Translate((transform.worldToLocalMatrix * Ship.transform.forward) * moveSpeed * Time.deltaTime);
         
+    }
+    private void OnDestroy()
+    {
+        Spawner.instance.spawnedCount--;
     }
 }
