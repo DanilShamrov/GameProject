@@ -22,6 +22,8 @@ public class Spawner : MonoBehaviour
 
     public static Spawner instance;
 
+    public bool enable = true;
+
     public void Awake()
     {
         instance = this;
@@ -37,7 +39,15 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (prefabToSpawn == null || !CanSpawn()) return;
+        if (spawnedCount <= 0)
+        {
+            SceneManager.LoadScene("UI");
+        }
+        if (prefabToSpawn == null || !CanSpawn())
+        {
+            enable = false;
+            return;
+        }
 
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
@@ -46,27 +56,26 @@ public class Spawner : MonoBehaviour
             timer = 0f;
         }
 
-        if (spawnedCount == 0)
-        {
-            SceneManager.LoadScene("UI");
-        }
+        
     }
 
     private bool CanSpawn()
     {
-        return maxSpawnCount == 0 || spawnedCount < maxSpawnCount;
+        return enable&&(maxSpawnCount == 0 || spawnedCount < maxSpawnCount);
     }
+
 
     private void SpawnObject()
     {
-        Vector2 randomOffset = Random.insideUnitCircle * spawnRadius;
+        Vector3 randomOffset = Random.insideUnitSphere * spawnRadius;
         Vector3 spawnPosition = new Vector3(
             transform.position.x + randomOffset.x,
             transform.position.y + randomOffset.y,
-            transform.position.z + randomOffset.y
+            transform.position.z + randomOffset.z
         );
 
         Instantiate(prefabToSpawn, spawnPosition, transform.rotation);
+        
         spawnedCount++;
     }
 }

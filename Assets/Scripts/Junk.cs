@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DetachCameraOnDestroy : MonoBehaviour
+public class Junk : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +15,6 @@ public class DetachCameraOnDestroy : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GetComponentInChildren<Camera>().enabled=true;
-        transform.DetachChildren();
+        Spawner.instance.spawnedCount--;
     }
 }

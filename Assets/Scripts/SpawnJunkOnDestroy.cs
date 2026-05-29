@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpawnJunkOnDestroy : MonoBehaviour
 {
-    public GameObject junk;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +16,6 @@ public class SpawnJunkOnDestroy : MonoBehaviour
     }
     private void OnDestroy()
     {
-        //Instantiate(junk);
+        
     }
 }
