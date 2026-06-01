@@ -8,7 +8,7 @@ public class PlayerDamageOnCollision : MonoBehaviour
     {
         if(other.TryGetComponent(out IDamageable damageable))
         {
-            damageable.TakeHealthDamage(BulletData.enemyDamageHighDifficulty);
+            damageable.TakeHealthDamage((int)Upgrades.currentDamageLevel);
         }
         
         //if (gameObject.TryGetComponent(out IDamageable damageable1))

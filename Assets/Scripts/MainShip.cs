@@ -1,7 +1,8 @@
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MainShip : MonoBehaviour
+public class MainShip : MonoBehaviour, IDamageable
 {
     InputAction Up, Down, Left, Right, Boost, Fire;
     IWeapon[] weapon;
@@ -10,9 +11,16 @@ public class MainShip : MonoBehaviour
     [SerializeField] int speed = 10;
     [SerializeField] const float boostEffect = 2.5f;
     [SerializeField] int boostCharge = 100;
-    [SerializeField] int maxBoostCharge = 100;
-
+    int maxBoostCharge = (int)Upgrades.currentBoostLevel;
+    int maxHealth = (int)Upgrades.currentHealthLevel;
+    public GameObject junk;
+    private int currentHealth;
     public int GetBoostCharge() => boostCharge;
+    public void TakeHealthDamage(int damage)
+    {
+        currentHealth -= damage;
+    }
+    public int GetHealth() => currentHealth;
     void Start()
     {
         weapon = GetComponentsInChildren<IWeapon>();
@@ -23,12 +31,27 @@ public class MainShip : MonoBehaviour
         Right = InputSystem.actions.FindAction("Right");
         Boost = InputSystem.actions.FindAction("Boost");
         Fire = InputSystem.actions.FindAction("Shoot");
-        
+
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (currentHealth <= 0)
+        {
+            if (junk != null)
+            {
+                Instantiate(junk).transform.position = transform.position;
+            }
+            foreach (Transform t in transform)
+            {
+                Destroy(t.gameObject);
+            }
+            Destroy(gameObject);
+
+        }
+
         if (Fire.IsPressed())
         {
             foreach (var weapon in weapon)
@@ -72,11 +95,5 @@ public class MainShip : MonoBehaviour
         {
             transform.Rotate(new Vector3(rotationSpeed, 0, 0));
         }
-    }
-    private void OnDestroy()
-    {
-        
-        transform.DetachChildren();
-
     }
 }

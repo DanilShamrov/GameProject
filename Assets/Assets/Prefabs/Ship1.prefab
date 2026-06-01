@@ -5218,8 +5218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainShip
   speed: 10
-  boostCharge: 500
-  maxBoostCharge: 500
+  boostCharge: 0
+  junk: {fileID: 6639244399630817651, guid: 434e09d79243d464b811f1dcd0a69d29, type: 3}
 --- !u!64 &5988971825077909391
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5281,7 +5281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b1e6de8bc413d4eb069ad7a69e28e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanDamageOnCollision
-  damageDealt: 20
 --- !u!114 &7375529242464101940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5289,7 +5288,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2892425620615569643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ab9570a47829894ca0c2a82a2d11375, type: 3}
   m_Name: 
