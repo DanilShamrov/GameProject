@@ -246,10 +246,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1271
+    m_Bits: 1143
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 896
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShipAttack
   Ship: {fileID: 667267860381628914}
   Target: {fileID: 0}
-  rotationSpeed: 1
+  rotationSpeed: 0.2
   moveSpeed: 10
 --- !u!1 &5388867675337099062
 GameObject:

@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class CanDamageOnCollision : MonoBehaviour
+public class PlayerDamageOnCollision : MonoBehaviour
 {
     //public BulletData damage;
-    [SerializeField] private int damageDealt = 20;
+    //[SerializeField] private int damageDealt = 20;
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out IDamageable damageable))
         {
-            damageable.TakeHealthDamage(damageDealt);
-            
+            damageable.TakeHealthDamage(BulletData.enemyDamageHighDifficulty);
         }
         
         //if (gameObject.TryGetComponent(out IDamageable damageable1))

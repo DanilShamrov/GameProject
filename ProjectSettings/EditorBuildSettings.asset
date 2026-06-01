@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/DefaultFight.unity
+    guid: 265bc9145c63deb4286c3093a3251bc3
+  - enabled: 1
+    path: Assets/Scenes/JunkCleaning.unity
+    guid: 5ee4397f4d5c8d148917576c37fb1d75
+  - enabled: 1
+    path: Assets/Scenes/Minefield.unity
+    guid: 1db0521c84850d8439a52555f2fdef03
+  - enabled: 1
+    path: Assets/Scenes/CargoShipFight.unity
+    guid: 7a500c6d8613abc4296b34797c6d7c87
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

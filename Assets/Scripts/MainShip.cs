@@ -5,13 +5,14 @@ public class MainShip : MonoBehaviour
 {
     InputAction Up, Down, Left, Right, Boost, Fire;
     IWeapon[] weapon;
-    float rotationSpeed = 0.5f;
+    float rotationSpeed = 1f;
 
     [SerializeField] int speed = 10;
     [SerializeField] const float boostEffect = 2.5f;
     [SerializeField] int boostCharge = 100;
     [SerializeField] int maxBoostCharge = 100;
 
+    public int GetBoostCharge() => boostCharge;
     void Start()
     {
         weapon = GetComponentsInChildren<IWeapon>();

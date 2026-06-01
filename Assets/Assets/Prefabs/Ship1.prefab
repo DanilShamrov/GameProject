@@ -5218,8 +5218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainShip
   speed: 10
-  boostCharge: 1000
-  maxBoostCharge: 1000
+  boostCharge: 500
+  maxBoostCharge: 500
 --- !u!64 &5988971825077909391
 MeshCollider:
   m_ObjectHideFlags: 0
