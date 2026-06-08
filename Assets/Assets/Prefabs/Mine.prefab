@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6783127514356165076}
   - component: {fileID: 6386029598475402118}
   - component: {fileID: 282344212604977376}
-  - component: {fileID: 6428194587670660119}
   - component: {fileID: 543137158845223492}
+  - component: {fileID: 4390658903462830567}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -64,19 +64,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6428194587670660119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444936111572804804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b1e6de8bc413d4eb069ad7a69e28e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CanDamageOnCollision
-  damageDealt: 40
 --- !u!54 &543137158845223492
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -104,6 +91,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4390658903462830567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444936111572804804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcca5507a5af2da46ac5c7151fd24390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mine
 --- !u!1001 &6739570090566696202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleObject
   maxHealth: 10
+  junk: {fileID: 0}
 --- !u!65 &2776477976070414540
 BoxCollider:
   m_ObjectHideFlags: 0

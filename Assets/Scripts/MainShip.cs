@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class MainShip : MonoBehaviour, IDamageable
 {
@@ -42,15 +43,22 @@ public class MainShip : MonoBehaviour, IDamageable
         {
             if (junk != null)
             {
-                Instantiate(junk).transform.position = transform.position;
+                UnityEngine.Debug.Log("123");
+                var j = Instantiate(junk);
+                j.transform.position = transform.position;
+                j.SetActive(true);
             }
             foreach (Transform t in transform)
             {
                 Destroy(t.gameObject);
             }
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Invoke("LoadMenu", 4);
+            //Destroy(gameObject);
 
+            
         }
+        
 
         if (Fire.IsPressed())
         {
@@ -95,5 +103,9 @@ public class MainShip : MonoBehaviour, IDamageable
         {
             transform.Rotate(new Vector3(rotationSpeed, 0, 0));
         }
+    }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("UI");
     }
 }
