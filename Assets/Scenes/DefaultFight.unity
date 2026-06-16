@@ -590,6 +590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship1
       objectReference: {fileID: 0}
+    - target: {fileID: 3302189632368602245, guid: cfff5b3dec3a83b4481b4ce24e7db153, type: 3}
+      propertyPath: junk
+      value: 
+      objectReference: {fileID: 6639244399630817651, guid: 9242840a2a466f94698ef7366e89489c, type: 3}
     m_RemovedComponents:
     - {fileID: -652400423734877400, guid: cfff5b3dec3a83b4481b4ce24e7db153, type: 3}
     m_RemovedGameObjects: []

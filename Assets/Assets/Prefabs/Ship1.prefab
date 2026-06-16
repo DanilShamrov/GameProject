@@ -5219,7 +5219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainShip
   speed: 10
   boostCharge: 0
-  junk: {fileID: 6639244399630817651, guid: 434e09d79243d464b811f1dcd0a69d29, type: 3}
+  junk: {fileID: 6639244399630817651, guid: 9242840a2a466f94698ef7366e89489c, type: 3}
 --- !u!64 &5988971825077909391
 MeshCollider:
   m_ObjectHideFlags: 0

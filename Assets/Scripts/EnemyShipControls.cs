@@ -42,7 +42,14 @@ public class EnemyShipControls : MonoBehaviour
     void Update()
     {
         Ship.transform.Translate((transform.worldToLocalMatrix * Ship.transform.forward) * moveSpeed * Time.deltaTime);
-        
+        if (Ship.transform.position.y < -75)
+        {
+            Ship.transform.Rotate(new Vector3(-rotationSpeed, 0, 0));
+        }
+        if (Ship.transform.position.y > 75)
+        {
+            Ship.transform.Rotate(new Vector3(rotationSpeed, 0, 0));
+        }
     }
     private void OnDestroy()
     {
