@@ -29,11 +29,104 @@ public class Upgrades : ScriptableObject
     public void SetDamageLvl1() { currentDamageLevel = Damage.Level1; }
     public void SetHealthLvl1() { currentHealthLevel = Health.Level1; }
     public void SetBoostLevel1() { currentBoostLevel = Boost.Level1; }
-    public void SetDamageLvl2() { currentDamageLevel = Damage.Level2; }
-    public void SetHealthLvl2() { currentHealthLevel = Health.Level2; }
-    public void SetBoostLevel2() {  currentBoostLevel = Boost.Level2; }
-    public void SetDamageLvl3() { currentDamageLevel = Damage.Level3; }
-    public void SetHealthLvl3() { currentHealthLevel = Health.Level3; }
-    public void SetBoostLevel3() { currentBoostLevel = Boost.Level3; }
+    public void SetDamageLvl2() {
+        if (!GameManager.Instance.upgradeDamage2Unlocked)
+        {
+            if (GameManager.Instance.points > 0) 
+            { 
+                GameManager.Instance.points--;
+                GameManager.Instance.upgradeDamage2Unlocked=true;
+                currentDamageLevel = Damage.Level2;
+            }
+        }
+        else
+        {
+            currentDamageLevel = Damage.Level2;
+        }
+    }
+    public void SetHealthLvl2() {
+        if (!GameManager.Instance.upgradeHealth2Unlocked)
+        {
+            if (GameManager.Instance.points > 0)
+            {
+                GameManager.Instance.points--;
+                GameManager.Instance.upgradeHealth2Unlocked = true;
+                currentHealthLevel = Health.Level2;
+            }
+        }
+        else
+        {
+            currentHealthLevel = Health.Level2;
+        }
+    }
+    public void SetBoostLevel2() {
+        if (!GameManager.Instance.upgradeBoost2Unlocked)
+        {
+            if (GameManager.Instance.points > 0)
+            {
+                GameManager.Instance.points--;
+                GameManager.Instance.upgradeBoost2Unlocked = true;
+                currentBoostLevel = Boost.Level2;
+            }
+        }
+        else
+        {
+            currentBoostLevel = Boost.Level2;
+        }
+    }
+    public void SetDamageLvl3() {
+        if (GameManager.Instance.upgradeDamage2Unlocked)
+        {
+            if (!GameManager.Instance.upgradeDamage3Unlocked)
+            {
+                if (GameManager.Instance.points > 0)
+                {
+                    GameManager.Instance.points--;
+                    GameManager.Instance.upgradeDamage3Unlocked = true;
+                    currentDamageLevel = Damage.Level3;
+                }
+            }
+            else
+            {
+                currentDamageLevel = Damage.Level3;
+            }
+        }
+    }
+    public void SetHealthLvl3() {
+        if (GameManager.Instance.upgradeHealth2Unlocked)
+        {
+            if (!GameManager.Instance.upgradeHealth3Unlocked)
+            {
+                if (GameManager.Instance.points > 0)
+                {
+                    GameManager.Instance.points--;
+                    GameManager.Instance.upgradeHealth3Unlocked = true;
+                    currentHealthLevel = Health.Level3;
+                }
+            }
+            else
+            {
+                currentHealthLevel = Health.Level3;
+            }
+        }
+    }
+    public void SetBoostLevel3() {
+        if (GameManager.Instance.upgradeBoost2Unlocked)
+        {
+            if (!GameManager.Instance.upgradeBoost3Unlocked)
+            {
+                if (GameManager.Instance.points > 0)
+                {
+                    GameManager.Instance.points--;
+                    GameManager.Instance.upgradeBoost3Unlocked = true;
+                    currentBoostLevel = Boost.Level3;
+                }
+            }
+            else
+            {
+                currentBoostLevel = Boost.Level3;
+            }
+        }
+    }
 
 }

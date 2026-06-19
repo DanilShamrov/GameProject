@@ -24,6 +24,8 @@ public class Spawner : MonoBehaviour
 
     public bool enable = true;
 
+    private bool victory = false;
+
     public void Awake()
     {
         instance = this;
@@ -39,9 +41,13 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (spawnedCount <= 0)
+        if (spawnedCount <= 0 && !victory)
         {
-            SceneManager.LoadScene("UI");
+            GameManager.Instance.points += 10;
+            Invoke(nameof(LoadMenu), 4);
+            victory=true;
+            
+            Debug.Log("Victory");
         }
         if (prefabToSpawn == null || !CanSpawn())
         {
@@ -77,5 +83,9 @@ public class Spawner : MonoBehaviour
         Instantiate(prefabToSpawn, spawnPosition, transform.rotation);
         
         spawnedCount++;
+    }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("UI");
     }
 }
