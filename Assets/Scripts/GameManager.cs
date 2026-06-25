@@ -25,7 +25,11 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        points = PlayerPrefs.GetInt("Points");
+        else
+        {
+            Destroy(this);
+        }
+            points = PlayerPrefs.GetInt("Points");
         upgradeBoost2Unlocked = PlayerPrefs.GetInt("Boost2")==1;
         upgradeBoost3Unlocked = PlayerPrefs.GetInt("Boost3") == 1;
 

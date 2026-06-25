@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
     {
         if (spawnedCount <= 0 && !victory)
         {
-            GameManager.Instance.points += 10;
+            GameManager.Instance.points += 1;
             Invoke(nameof(LoadMenu), 4);
             victory=true;
             
