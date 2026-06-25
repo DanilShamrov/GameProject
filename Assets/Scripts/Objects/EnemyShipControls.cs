@@ -4,19 +4,23 @@ public class EnemyShipControls : MonoBehaviour
 {
 
     public GameObject Ship;
-    public GameObject Target;
+    public GameObject Target=null;
     IWeapon[] weapon;
 
     public float rotationSpeed;
     public float moveSpeed;
+    public int aggressionRadius = 30;
 
     private void OnTriggerStay(Collider other)
     {
-        
-        Vector3 dir = other.transform.position - Ship.transform.position;
+        if (Target == null)
+        {
+            Target = other.gameObject;
+        }
+        Vector3 dir = Target.transform.position - Ship.transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(dir);
         Ship.transform.rotation = Quaternion.Slerp(Ship.transform.rotation, targetRotation, rotationSpeed*Time.deltaTime);
-        Target = other.gameObject;
+        
         if (dir.magnitude < 30)
         {
             if (dir.magnitude < 20) moveSpeed = 5;

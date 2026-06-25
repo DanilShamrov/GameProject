@@ -17,9 +17,9 @@ public class Upgrades : ScriptableObject
     }
     public enum Boost
     {
-        Level1 = 100,
-        Level2 = 250,
-        Level3 = 500
+        Level1 = 300,
+        Level2 = 750,
+        Level3 = 1200
     }
 
     public static Damage currentDamageLevel = Damage.Level1;

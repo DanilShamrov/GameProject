@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 282344212604977376}
   - component: {fileID: 543137158845223492}
   - component: {fileID: 4390658903462830567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +166,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e5529d00b92e6524f9a4226f98941c1f, type: 3}
       propertyPath: m_Name
       value: Mine
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5529d00b92e6524f9a4226f98941c1f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

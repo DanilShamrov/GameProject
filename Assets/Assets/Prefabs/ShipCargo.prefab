@@ -73,7 +73,7 @@ PrefabInstance:
       addedObject: {fileID: 5499941046736638793}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 385b4e2aef536a14db61fd8531bc25a1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2464718486234364436}
+      addedObject: {fileID: 2750316278524878114}
   m_SourcePrefab: {fileID: 100100000, guid: 385b4e2aef536a14db61fd8531bc25a1, type: 3}
 --- !u!1 &1075514600580799549 stripped
 GameObject:
@@ -92,7 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b1e6de8bc413d4eb069ad7a69e28e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanDamageOnCollision
-  damageDealt: 20
 --- !u!114 &5428312240216667162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleObject
   maxHealth: 200
+  junk: {fileID: 6639244399630817651, guid: 9242840a2a466f94698ef7366e89489c, type: 3}
 --- !u!54 &6756463641708064754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleMove
   speed: 10
---- !u!114 &2464718486234364436
+--- !u!114 &2750316278524878114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,7 +177,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1075514600580799549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7895987850b2b4448960ada48494d7f8, type: 3}
+  m_Script: {fileID: 11500000, guid: a9e1bac79d87f6140bda69de8fb3f59a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnJunkOnDestroy
-  junk: {fileID: 919132149155446097, guid: e5529d00b92e6524f9a4226f98941c1f, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::CargoShip

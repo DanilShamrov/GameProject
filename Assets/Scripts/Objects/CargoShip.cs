@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class SpawnJunkOnDestroy : MonoBehaviour
+public class CargoShip : MonoBehaviour
 {
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +15,7 @@ public class SpawnJunkOnDestroy : MonoBehaviour
     }
     private void OnDestroy()
     {
-        
+        CargoShipSpawner.instance.spawnedCount--;
+
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Spawner : MonoBehaviour
+public class CargoShipSpawner : MonoBehaviour
 {
     [Header("Префаб для спавна")]
     public GameObject prefabToSpawn;
@@ -20,11 +20,11 @@ public class Spawner : MonoBehaviour
     public int spawnedCount = 0;
     protected float timer = 0f;
 
-    public static Spawner instance;
+    public static CargoShipSpawner instance;
 
     public bool enable = true;
 
-    public bool victory = false;
+    public bool defeat = false;
 
     public void Awake()
     {
@@ -41,13 +41,12 @@ public class Spawner : MonoBehaviour
 
     protected void Update()
     {
-        if (spawnedCount <= 0 && !victory)
+        if (spawnedCount <= 0 && !defeat)
         {
-            GameManager.Instance.points += 10;
             Invoke(nameof(LoadMenu), 4);
-            victory=true;
-            
-            Debug.Log("Victory");
+            defeat = true;
+
+            Debug.Log("Defeat");
         }
         if (prefabToSpawn == null || !CanSpawn())
         {
@@ -62,12 +61,12 @@ public class Spawner : MonoBehaviour
             timer = 0f;
         }
 
-        
+
     }
 
     protected bool CanSpawn()
     {
-        return enable&&(maxSpawnCount == 0 || spawnedCount < maxSpawnCount);
+        return enable && (maxSpawnCount == 0 || spawnedCount < maxSpawnCount);
     }
 
 
@@ -81,11 +80,12 @@ public class Spawner : MonoBehaviour
         );
 
         Instantiate(prefabToSpawn, spawnPosition, transform.rotation);
-        
+
         spawnedCount++;
     }
     public void LoadMenu()
     {
         SceneManager.LoadScene("UI");
     }
+
 }

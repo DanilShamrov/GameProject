@@ -17,6 +17,7 @@ public class MainShip : MonoBehaviour, IDamageable
     public GameObject junk;
     private int currentHealth;
     public int GetBoostCharge() => boostCharge;
+    public static MainShip instance;
     public void TakeHealthDamage(int damage)
     {
         currentHealth -= damage;
@@ -24,6 +25,8 @@ public class MainShip : MonoBehaviour, IDamageable
     public int GetHealth() => currentHealth;
     void Start()
     {
+        if (instance == null)
+            instance = this;
         weapon = GetComponentsInChildren<IWeapon>();
 
         Up = InputSystem.actions.FindAction("Up");
