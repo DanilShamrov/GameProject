@@ -14,6 +14,11 @@ public class DifficultyText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = Difficulty.currentDifficulty.ToString();
+        if (Difficulty.currentDifficulty == Difficulty.DifficultyMode.Low)
+            text.text = "Легко";
+        if (Difficulty.currentDifficulty == Difficulty.DifficultyMode.Medium)
+            text.text = "Средне";
+        if (Difficulty.currentDifficulty == Difficulty.DifficultyMode.Hard)
+            text.text = "Сложно";
     }
 }

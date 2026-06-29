@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8257643703022184555}
   m_Layer: 0
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 528792325003797799}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.00000004750718, y: -0.62, z: -0.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5117,11 +5117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9543de9500565cd48a59cd2227adb959, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9543de9500565cd48a59cd2227adb959, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9543de9500565cd48a59cd2227adb959, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5191,9 +5191,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9543de9500565cd48a59cd2227adb959, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3860455218564576675}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9543de9500565cd48a59cd2227adb959, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7375529242464101940}
   m_SourcePrefab: {fileID: 100100000, guid: 9543de9500565cd48a59cd2227adb959, type: 3}
 --- !u!4 &2551330327758371409 stripped
 Transform:
@@ -5217,6 +5214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9d20bdf2f6f7848a0d7ce73535cf3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainShip
+  BoostPressed: 0
   speed: 10
   boostCharge: 0
   junk: {fileID: 6639244399630817651, guid: 9242840a2a466f94698ef7366e89489c, type: 3}
@@ -5258,7 +5256,7 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1847
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 192
@@ -5281,20 +5279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b1e6de8bc413d4eb069ad7a69e28e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanDamageOnCollision
---- !u!114 &7375529242464101940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2892425620615569643}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab9570a47829894ca0c2a82a2d11375, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DestructibleObject
-  maxHealth: 100
-  junk: {fileID: 6639244399630817651, guid: 9242840a2a466f94698ef7366e89489c, type: 3}
 --- !u!1001 &6006635493644436205
 PrefabInstance:
   m_ObjectHideFlags: 0

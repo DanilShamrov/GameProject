@@ -5,9 +5,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
 
-    public int points;
-
-    
+    public int points;    
 
     public bool upgradeHealth2Unlocked=false;
     public bool upgradeHealth3Unlocked=false;
@@ -39,6 +37,8 @@ public class GameManager : MonoBehaviour
         upgradeHealth2Unlocked = PlayerPrefs.GetInt("Health2") == 1;
         upgradeHealth3Unlocked = PlayerPrefs.GetInt("Health3") == 1;
 
+        Difficulty.currentDifficulty = (Difficulty.DifficultyMode)PlayerPrefs.GetInt("CurrentDifficulty");
+
         Upgrades.currentBoostLevel = (Upgrades.Boost)PlayerPrefs.GetInt("CurrentBoost");
         Upgrades.currentHealthLevel = (Upgrades.Health)PlayerPrefs.GetInt("CurrentHealth");
         Upgrades.currentDamageLevel = (Upgrades.Damage)PlayerPrefs.GetInt("CurrentDamage");
@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentDamage", (int)Upgrades.currentDamageLevel);
         PlayerPrefs.SetInt("CurrentBoost", (int)Upgrades.currentBoostLevel);
         PlayerPrefs.SetInt("CurrentHealth", (int)Upgrades.currentHealthLevel);
+
+        PlayerPrefs.SetInt("CurrentDifficulty", (int)Difficulty.currentDifficulty);
 
         PlayerPrefs.Save();
     }

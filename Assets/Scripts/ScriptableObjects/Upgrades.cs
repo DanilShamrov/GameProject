@@ -26,15 +26,18 @@ public class Upgrades : ScriptableObject
     public static Health currentHealthLevel = Health.Level1;
     public static Boost currentBoostLevel = Boost.Level1;
 
+    public int upgradeLvl2Cost = 1000;
+    public int upgradeLvl3Cost = 2000;
+
     public void SetDamageLvl1() { currentDamageLevel = Damage.Level1; }
     public void SetHealthLvl1() { currentHealthLevel = Health.Level1; }
     public void SetBoostLevel1() { currentBoostLevel = Boost.Level1; }
     public void SetDamageLvl2() {
         if (!GameManager.Instance.upgradeDamage2Unlocked)
         {
-            if (GameManager.Instance.points > 0) 
+            if (GameManager.Instance.points >= upgradeLvl2Cost) 
             { 
-                GameManager.Instance.points--;
+                GameManager.Instance.points -= upgradeLvl2Cost;
                 GameManager.Instance.upgradeDamage2Unlocked=true;
                 currentDamageLevel = Damage.Level2;
             }
@@ -47,9 +50,9 @@ public class Upgrades : ScriptableObject
     public void SetHealthLvl2() {
         if (!GameManager.Instance.upgradeHealth2Unlocked)
         {
-            if (GameManager.Instance.points > 0)
+            if (GameManager.Instance.points >= upgradeLvl2Cost)
             {
-                GameManager.Instance.points--;
+                GameManager.Instance.points -= upgradeLvl2Cost;
                 GameManager.Instance.upgradeHealth2Unlocked = true;
                 currentHealthLevel = Health.Level2;
             }
@@ -62,9 +65,9 @@ public class Upgrades : ScriptableObject
     public void SetBoostLevel2() {
         if (!GameManager.Instance.upgradeBoost2Unlocked)
         {
-            if (GameManager.Instance.points > 0)
+            if (GameManager.Instance.points >= upgradeLvl2Cost)
             {
-                GameManager.Instance.points--;
+                GameManager.Instance.points -= upgradeLvl2Cost;
                 GameManager.Instance.upgradeBoost2Unlocked = true;
                 currentBoostLevel = Boost.Level2;
             }
@@ -79,9 +82,9 @@ public class Upgrades : ScriptableObject
         {
             if (!GameManager.Instance.upgradeDamage3Unlocked)
             {
-                if (GameManager.Instance.points > 0)
+                if (GameManager.Instance.points >= upgradeLvl3Cost)
                 {
-                    GameManager.Instance.points--;
+                    GameManager.Instance.points -= upgradeLvl3Cost;
                     GameManager.Instance.upgradeDamage3Unlocked = true;
                     currentDamageLevel = Damage.Level3;
                 }
@@ -97,9 +100,9 @@ public class Upgrades : ScriptableObject
         {
             if (!GameManager.Instance.upgradeHealth3Unlocked)
             {
-                if (GameManager.Instance.points > 0)
+                if (GameManager.Instance.points >= upgradeLvl3Cost)
                 {
-                    GameManager.Instance.points--;
+                    GameManager.Instance.points -= upgradeLvl3Cost;
                     GameManager.Instance.upgradeHealth3Unlocked = true;
                     currentHealthLevel = Health.Level3;
                 }
@@ -115,9 +118,9 @@ public class Upgrades : ScriptableObject
         {
             if (!GameManager.Instance.upgradeBoost3Unlocked)
             {
-                if (GameManager.Instance.points > 0)
+                if (GameManager.Instance.points >= upgradeLvl3Cost)
                 {
-                    GameManager.Instance.points--;
+                    GameManager.Instance.points -= upgradeLvl3Cost;
                     GameManager.Instance.upgradeBoost3Unlocked = true;
                     currentBoostLevel = Boost.Level3;
                 }

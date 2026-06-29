@@ -26,8 +26,8 @@ public class MouseLook : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     private void OnEnable()

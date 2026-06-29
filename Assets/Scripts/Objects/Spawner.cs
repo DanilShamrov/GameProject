@@ -1,20 +1,13 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
-    [Header("Префаб для спавна")]
     public GameObject prefabToSpawn;
-
-    [Header("Параметры спавна")]
     public float spawnInterval = 2f;
-
-    [Header("Радиус области спавна")]
-    [Tooltip("Максимальное расстояние от центра спавнера")]
     public float spawnRadius = 5f;
-
-    [Header("Ограничение количества")]
-    [Tooltip("Сколько всего объектов создать (0 — без ограничений)")]
     public int maxSpawnCount = 10;
 
     public int spawnedCount = 0;
@@ -25,7 +18,9 @@ public class Spawner : MonoBehaviour
     public bool enable = true;
 
     public bool victory = false;
-
+    public int pointsOnVictory;
+    public List<GameObject> spawnedObj;
+    public Dictionary<GameObject, GameObject> targetValues;
     public void Awake()
     {
         instance = this;
@@ -33,6 +28,9 @@ public class Spawner : MonoBehaviour
     }
     protected void Start()
     {
+        spawnedObj= new List<GameObject>();
+        targetValues = new Dictionary<GameObject, GameObject>();
+        maxSpawnCount *= (int)Difficulty.currentDifficulty;
         if (prefabToSpawn != null && CanSpawn())
         {
             SpawnObject();
@@ -43,7 +41,7 @@ public class Spawner : MonoBehaviour
     {
         if (spawnedCount <= 0 && !victory)
         {
-            GameManager.Instance.points += 1;
+            GameManager.Instance.points += pointsOnVictory;
             Invoke(nameof(LoadMenu), 4);
             victory=true;
             
@@ -79,10 +77,13 @@ public class Spawner : MonoBehaviour
             transform.position.y + randomOffset.y,
             transform.position.z + randomOffset.z
         );
-
-        Instantiate(prefabToSpawn, spawnPosition, transform.rotation);
         
         spawnedCount++;
+        var obj = Instantiate(prefabToSpawn, spawnPosition, transform.rotation);
+        var arrow = Instantiate(Tracker.instance.arrow, Tracker.instance.transform);
+        spawnedObj.Add(obj);
+        Tracker.instance.targets.Add(arrow);
+        targetValues.Add(arrow, obj);
     }
     public void LoadMenu()
     {

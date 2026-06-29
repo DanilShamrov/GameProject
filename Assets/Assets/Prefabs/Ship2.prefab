@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 502737524360983050}
   - component: {fileID: 4395117456617183048}
   - component: {fileID: 5167247032402897288}
+  - component: {fileID: 5923533957576891251}
   m_Layer: 8
   m_Name: Ship2
   m_TagString: Untagged
@@ -189,6 +190,20 @@ MonoBehaviour:
   rotationX: 0
   rotationY: 180
   rotationZ: 0
+--- !u!114 &5923533957576891251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667267860381628914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c076519c1da68f64ba4a17b1dc6ee3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnableWithDifficulty
+  enableOnMedium: 0
+  enableOnHard: 0
 --- !u!1 &1347287764748386750
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +215,7 @@ GameObject:
   - component: {fileID: 2465361563459407704}
   - component: {fileID: 1495126203066991908}
   - component: {fileID: 5305017282036100296}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: AttackRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +250,7 @@ SphereCollider:
     m_Bits: 1143
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 2944
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -260,6 +275,7 @@ MonoBehaviour:
   rotationSpeed: 0.2
   moveSpeed: 10
   aggressionRadius: 30
+  isRequired: 1
 --- !u!1 &5388867675337099062
 GameObject:
   m_ObjectHideFlags: 0

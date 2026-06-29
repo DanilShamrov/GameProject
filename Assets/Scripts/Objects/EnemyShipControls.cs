@@ -10,7 +10,7 @@ public class EnemyShipControls : MonoBehaviour
     public float rotationSpeed;
     public float moveSpeed;
     public int aggressionRadius = 30;
-
+    public bool isRequired = true;
     private void OnTriggerStay(Collider other)
     {
         if (Target == null)
@@ -40,6 +40,12 @@ public class EnemyShipControls : MonoBehaviour
     {
         weapon = transform.parent.GetComponentsInChildren<IWeapon>();
         Ship = transform.parent.gameObject;
+        if (Difficulty.currentDifficulty == Difficulty.DifficultyMode.Low)
+            rotationSpeed = 0.2f;
+        if (Difficulty.currentDifficulty == Difficulty.DifficultyMode.Medium)
+            rotationSpeed = 0.5f;
+        if (Difficulty.currentDifficulty == Difficulty.DifficultyMode.Hard)
+            rotationSpeed = 0.8f;
     }
 
     // Update is called once per frame
@@ -57,6 +63,7 @@ public class EnemyShipControls : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Spawner.instance.spawnedCount--;
+        if (isRequired)
+            Spawner.instance.spawnedCount--;
     }
 }

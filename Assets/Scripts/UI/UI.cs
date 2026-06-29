@@ -18,5 +18,22 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene("CargoShipFight");
     }
+    public void LoadSceneMainScene()
+    {
+        SceneManager.LoadScene("UI");
+    }
+    public void LoadSceneMainMenu() { 
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void StartNewGame()
+    {
+        GameManager.Instance.ResetProgress();
+        SceneManager.LoadScene("UI");
+    }
+    public void Quit()
+    {
+        Destroy(GameManager.Instance);
+        Application.Quit();
+    }
     
 }

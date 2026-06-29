@@ -6,7 +6,7 @@ public class Difficulty : ScriptableObject
     public static DifficultyMode currentDifficulty=DifficultyMode.Low;
     public enum DifficultyMode
     {
-        Low, Medium, Hard
+        Low=1, Medium, Hard
     }
 
     public void SetLowDifficulty() { currentDifficulty = DifficultyMode.Low; }
