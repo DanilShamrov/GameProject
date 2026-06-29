@@ -5636,7 +5636,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Spawner_Start_m8BB68F2141CF386C08091E933
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2__ctor_mA8CE71EBFBE183377D32AED5B6BE8AF639BCD174_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_t9987DACE70B120172EBEAF2BB5853128595A2CDF_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Difficulty_t17A86ED975E6C5C9F72E821655C0B340769B9707_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_m447372C1EF7141193B93090A77395B786C72C7BC_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -5651,32 +5650,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Spawner_Start_m8BB68F2141CF386C08091E933
 		Dictionary_2__ctor_mA8CE71EBFBE183377D32AED5B6BE8AF639BCD174(L_1, Dictionary_2__ctor_mA8CE71EBFBE183377D32AED5B6BE8AF639BCD174_RuntimeMethod_var);
 		__this->___targetValues = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___targetValues), (void*)L_1);
-		int32_t L_2 = __this->___maxSpawnCount;
-		il2cpp_codegen_runtime_class_init_inline(Difficulty_t17A86ED975E6C5C9F72E821655C0B340769B9707_il2cpp_TypeInfo_var);
-		int32_t L_3 = ((Difficulty_t17A86ED975E6C5C9F72E821655C0B340769B9707_StaticFields*)il2cpp_codegen_static_fields_for(Difficulty_t17A86ED975E6C5C9F72E821655C0B340769B9707_il2cpp_TypeInfo_var))->___currentDifficulty;
-		__this->___maxSpawnCount = ((int32_t)il2cpp_codegen_multiply(L_2, (int32_t)L_3));
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->___prefabToSpawn;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___prefabToSpawn;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_5;
-		L_5 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_4, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_5)
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
 		{
-			goto IL_0044;
+			goto IL_0032;
 		}
 	}
 	{
-		bool L_6;
-		L_6 = Spawner_CanSpawn_m9F1AED2909C959444EAD217568EB529AD31650AD(__this, NULL);
-		if (!L_6)
+		bool L_4;
+		L_4 = Spawner_CanSpawn_m9F1AED2909C959444EAD217568EB529AD31650AD(__this, NULL);
+		if (!L_4)
 		{
-			goto IL_0044;
+			goto IL_0032;
 		}
 	}
 	{
 		Spawner_SpawnObject_m30B6E1F9DF05C130E152327D1F2B5B9CF9E650D2(__this, NULL);
 	}
 
-IL_0044:
+IL_0032:
 	{
 		return;
 	}

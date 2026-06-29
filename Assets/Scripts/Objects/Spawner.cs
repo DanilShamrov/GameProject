@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
     {
         spawnedObj= new List<GameObject>();
         targetValues = new Dictionary<GameObject, GameObject>();
-        maxSpawnCount *= (int)Difficulty.currentDifficulty;
+        //maxSpawnCount *= (int)Difficulty.currentDifficulty;
         if (prefabToSpawn != null && CanSpawn())
         {
             SpawnObject();
